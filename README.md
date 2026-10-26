@@ -154,22 +154,6 @@ All tables in `outputs/tables/` feed the Power BI dashboard:
 - [ ] Interactive Power BI dashboard
 - [ ] Final report with data-driven recommendations
 
-## Team
-| Member | Responsibility |
-|---|---|
-| Member 1 | Team Lead – project setup, code review, recommendations, final submission |
-| Member 2 | Data cleaning |
-| Member 3 | External factor features & impact analysis |
-| Member 4 | Exploratory data analysis |
-| Member 5 | Adstock & saturation transformations |
-| Member 6 | Model building & validation |
-| Member 7 | Channel effectiveness & ROI |
-| Member 8 | Budget optimisation |
-| Member 9 | Power BI dashboard |
-| Member 10 | Report & documentation |
-
-
-
 ## Limitations
 - **Small sample:** 36 monthly observations against 6 channels and 8 external factors. Models must stay parsimonious (regularisation, feature selection) to avoid overfitting.
 - **Correlation, not causation:** MMM estimates are observational; results should ideally be validated with experiments (e.g. geo or lift tests).
