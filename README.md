@@ -19,7 +19,6 @@ Measuring the impact of advertising spend across six marketing channels for a Sr
 - [Outputs](#outputs)
 - [Deliverables](#deliverables)
 - [Team](#team)
-- [Contributing](#contributing)
 - [Limitations](#limitations)
 - [Tech Stack](#tech-stack)
 
@@ -89,7 +88,6 @@ mmm-budget-optimisation/
 ├── dashboard/               # Power BI (.pbix) file
 ├── reports/                 # final report
 ├── tests/                   # unit tests
-├── CONTRIBUTING.md          # team Git workflow
 └── requirements.txt
 ```
 
@@ -170,8 +168,7 @@ All tables in `outputs/tables/` feed the Power BI dashboard:
 | Member 9 | Power BI dashboard |
 | Member 10 | Report & documentation |
 
-## Contributing
-We use a `main` / `dev` / `feature/*` branching model with pull requests. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full workflow and the agreed output file contract.
+
 
 ## Limitations
 - **Small sample:** 36 monthly observations against 6 channels and 8 external factors. Models must stay parsimonious (regularisation, feature selection) to avoid overfitting.
