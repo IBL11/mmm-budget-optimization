@@ -1,0 +1,48 @@
+{
+  "data_file": "data/raw/mmm_dataset.xlsx",
+  "sheet": "MMM_Data",
+  "date_col": "month",
+  "frequency": "monthly",
+  "target": "sales_revenue_lkr",
+  "channels": [
+    "tv_spend_lkr",
+    "facebook_instagram_spend_lkr",
+    "google_search_spend_lkr",
+    "youtube_spend_lkr",
+    "radio_spend_lkr",
+    "outdoor_spend_lkr"
+  ],
+  "external_factors": [
+    "average_price_index",
+    "promotion_discount_pct",
+    "competitor_pressure_index_0_100",
+    "economic_sentiment_index_0_100",
+    "lkr_usd_exchange_rate",
+    "inflation_proxy_index",
+    "seasonal_demand_index",
+    "public_holiday_count"
+  ],
+  "test_size_months": 6,
+  "adstock_decay": {
+    "tv_spend_lkr": 0.4,
+    "facebook_instagram_spend_lkr": 0.2,
+    "google_search_spend_lkr": 0.1,
+    "youtube_spend_lkr": 0.3,
+    "radio_spend_lkr": 0.2,
+    "outdoor_spend_lkr": 0.3
+  },
+  "saturation": {
+    "tv_spend_lkr": {"half_sat": null, "slope": 1.0},
+    "facebook_instagram_spend_lkr": {"half_sat": null, "slope": 1.0},
+    "google_search_spend_lkr": {"half_sat": null, "slope": 1.0},
+    "youtube_spend_lkr": {"half_sat": null, "slope": 1.0},
+    "radio_spend_lkr": {"half_sat": null, "slope": 1.0},
+    "outdoor_spend_lkr": {"half_sat": null, "slope": 1.0}
+  },
+  "optimisation": {
+    "total_budget_lkr": null,
+    "min_change_pct": -0.3,
+    "max_change_pct": 0.3,
+    "scenarios_pct": [-0.2, -0.1, 0.0, 0.1, 0.2]
+  }
+}

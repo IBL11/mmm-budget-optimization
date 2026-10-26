@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+venv/
+.venv/
+env/
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Data (keep folders, ignore big files - remove line below if dataset is small)
+data/raw/*.zip
+*.parquet
+# Secrets
+.env
+# Power BI temp
+*.pbix.bak
+~$*
