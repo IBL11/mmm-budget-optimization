@@ -1,0 +1,15 @@
+feature,VIF,flag
+inflation_proxy_index,104.79,HIGH
+average_price_index,93.33,HIGH
+lkr_usd_exchange_rate,7.18,moderate
+outdoor_spend_lkr,2.93,OK
+youtube_spend_lkr,2.73,OK
+google_search_spend_lkr,2.6,OK
+economic_sentiment_index_0_100,2.56,OK
+radio_spend_lkr,2.48,OK
+facebook_instagram_spend_lkr,2.41,OK
+tv_spend_lkr,2.39,OK
+seasonal_demand_index,2.02,OK
+public_holiday_count,1.97,OK
+promotion_discount_pct,1.62,OK
+competitor_pressure_index_0_100,1.51,OK
