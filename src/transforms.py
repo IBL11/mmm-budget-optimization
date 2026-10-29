@@ -119,6 +119,60 @@ def hill_saturation(
     return result
 
 
-def transform_channel(x, decay, half_sat, slope=1.0):
-    """Apply adstock then saturation."""
-    return hill_saturation(geometric_adstock(np.asarray(x), decay), half_sat, slope)
+def transform_channel_with_training_k(
+    x,
+    decay: float,
+    train_end: int,
+    k_multiplier: float = 1.0,
+    slope: float = 1.0
+):
+    """
+    Fit half-saturation K on the training portion only,
+    then transform the full chronological spend series.
+
+    Returns
+    -------
+    saturated : np.ndarray
+        Adstock + Hill saturation features.
+    half_sat : float
+        Derived half-saturation parameter (LKR).
+    """
+    x = np.asarray(x, dtype=float)
+
+    if (
+        not isinstance(train_end, (int, np.integer))
+        or not 1 <= train_end <= len(x)
+    ):
+        raise ValueError("Invalid training window.")
+
+    try:
+        k_multiplier = float(k_multiplier)
+    except (TypeError, ValueError):
+        raise ValueError("k_multiplier must be numeric.")
+
+    if not np.isfinite(k_multiplier) or k_multiplier <= 0:
+        raise ValueError("k_multiplier must be positive.")
+
+    # Step 1: Adstock with selected decay
+    adstock = geometric_adstock(x, decay)
+
+    # Step 2: Estimate K from training observations only
+    train_adstock = adstock[:train_end]
+    positive = train_adstock[train_adstock > 0]
+
+    if len(positive) == 0:
+        raise ValueError("No positive training Adstock values.")
+
+    half_sat = float(np.median(positive) * k_multiplier)
+
+    if not np.isfinite(half_sat) or half_sat <= 0:
+        raise ValueError("Invalid half-saturation value.")
+
+    # Step 3: Apply Hill saturation
+    saturated = hill_saturation(
+        adstock,
+        half_sat=half_sat,
+        slope=slope
+    )
+
+    return saturated, half_sat
