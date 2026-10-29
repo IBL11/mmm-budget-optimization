@@ -176,3 +176,46 @@ def transform_channel_with_training_k(
     )
 
     return saturated, half_sat
+
+
+def transform_channel(
+    x: np.ndarray,
+    decay: float,
+    half_sat: float,
+    slope: float = 1.0
+) -> np.ndarray:
+    """
+    Apply geometric adstock followed by Hill saturation.
+
+    Parameters
+    ----------
+    x : np.ndarray
+        Monthly advertising spending.
+    decay : float
+        Adstock carryover rate.
+    half_sat : float
+        Half-saturation parameter K.
+    slope : float
+        Hill saturation slope.
+
+    Returns
+    -------
+    np.ndarray
+        Saturation-adjusted advertising features.
+    """
+
+    # Step 1: Apply Adstock
+    adstock = geometric_adstock(
+        x,
+        decay=decay
+    )
+
+    # Step 2: Apply Hill Saturation
+    saturated = hill_saturation(
+        adstock,
+        half_sat=half_sat,
+        slope=slope
+    )
+
+    return saturated
+
