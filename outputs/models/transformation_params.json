@@ -1,0 +1,32 @@
+{
+    "tv_spend_lkr": {
+        "adstock_decay": 0.4,
+        "half_sat": 7186472.037722546,
+        "slope": 1.0
+    },
+    "facebook_instagram_spend_lkr": {
+        "adstock_decay": 0.2,
+        "half_sat": 5468062.35038601,
+        "slope": 1.0
+    },
+    "google_search_spend_lkr": {
+        "adstock_decay": 0.1,
+        "half_sat": 3554542.300959506,
+        "slope": 1.0
+    },
+    "youtube_spend_lkr": {
+        "adstock_decay": 0.3,
+        "half_sat": 3064299.305586501,
+        "slope": 1.0
+    },
+    "radio_spend_lkr": {
+        "adstock_decay": 0.2,
+        "half_sat": 1949688.5050181374,
+        "slope": 1.0
+    },
+    "outdoor_spend_lkr": {
+        "adstock_decay": 0.3,
+        "half_sat": 3565589.8417262835,
+        "slope": 1.0
+    }
+}
