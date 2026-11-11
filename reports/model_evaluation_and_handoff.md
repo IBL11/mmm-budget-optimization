@@ -214,3 +214,24 @@ A simpler model using log(1 + spend), with no adstock or saturation curve, was f
 
 The final model is more accurate, and both models agree on the main message (rank correlation 0.87): Google Search and YouTube give the best return on extra spend, and Facebook/Instagram and Radio the lowest.
 Outputs: `outputs/tables/model_alternative_comparison.csv`, `outputs/tables/model_alternative_roi_comparison.csv`.
+
+
+
+### 5.5 Adstock and saturation sensitivity
+
+The adstock decay rates and half-saturation points come from `config/params.json`. Per-channel tuning to minimise CV error was tried, but the "best" decays changed a lot with the number of CV folds (for example Google Search 0.2 with 3 folds vs 0.7 with 5 folds), and test MAPE got worse (1.13% → about 1.3%). With only 30 training months this over-fits, so the configured values were kept and a sensitivity check was run instead.
+
+| Variant | Test R² | Test MAPE | Top 2 channels by ROI | No measurable effect |
+|---|---:|---:|---|---|
+| Decay −0.2 | 0.90 | 1.64% | Google Search & YouTube | Facebook/Instagram, Radio |
+| Decay −0.1 | 0.91 | 1.41% | YouTube & Google Search | Radio |
+| **Configured** | **0.94** | **1.13%** | **YouTube & Google Search** | **Radio** |
+| Decay +0.1 | 0.95 | 1.19% | YouTube & Google Search | Radio |
+| Decay +0.2 | 0.94 | 1.29% | Google Search & YouTube | Radio |
+| Half-saturation ×0.5 | 0.94 | 1.10% | YouTube & Google Search | Radio |
+| Half-saturation ×0.75 | 0.94 | 1.10% | YouTube & Google Search | Radio |
+| Half-saturation ×1.5 | 0.94 | 1.16% | YouTube & Google Search | Radio |
+| Half-saturation ×2 | 0.94 | 1.18% | YouTube & Google Search | Radio |
+
+The main message does not depend on these settings: Google Search and YouTube are the top two channels in every variant, and Radio has no measurable effect in every variant. The exact ROI of Facebook/Instagram and Outdoor is more sensitive to the decay rates, so their values should be read as approximate.
+Output: `outputs/tables/model_adstock_saturation_sensitivity.csv`.
