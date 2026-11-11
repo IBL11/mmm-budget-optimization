@@ -17,15 +17,16 @@ A 30-month training split (**Jan 2023 – Jun 2025**) and an untouched 6-month h
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Mean Baseline** | 4,000,405.83 | 6,028,313.61 | -0.337 | 4.31% | 1.15 | Naive benchmark fails out-of-sample |
 | **OLS Regression** | 3,260,295.90 | 4,207,898.34 | 0.348 | 3.66% | 0.19 | Severe multicollinearity & autocorrelation |
-| **Ridge Regression** | **891,421.35** | **1,121,793.01** | **0.954** | **1.02%** | **2.29** | **Production Champion Model** |
+| **Ridge Regression (non-negative media)** | **1,028,779.76** | **1,307,956.77** | **0.937** | **1.18%** | **2.02** | **Production Champion Model** |
 
 ### Key Takeaways:
-1. **Predictive Accuracy ($R^2 = 95.37\%$, $\text{MAPE} = 1.02\%$)**: The regularized Ridge model accounts for ~95.4% of total sales revenue variance on completely unseen future months, holding average percentage forecasting error to just ~1.02%.
-2. **Residual Diagnostic & Autocorrelation ($DW = 2.29$)**: Unlike standard OLS ($DW = 0.19$), which exhibited extreme positive autocorrelation due to unmodeled carryover, the Ridge regression model with Adstock and Hill Saturation yields a Durbin-Watson statistic near $2.0$. This confirms zero residual memory or serial correlation leakage.
+1. **Predictive Accuracy ($R^2 = 93.70\%$, $\text{MAPE} = 1.18\%$)**: The regularized Ridge model (with non-negative media coefficients) accounts for ~93.7% of total sales revenue variance on completely unseen future months, holding average percentage forecasting error to just ~1.18%.
+2. **Residual Diagnostic & Autocorrelation ($DW = 2.02$)**: Unlike standard OLS ($DW = 2.02$), which exhibited extreme positive autocorrelation due to unmodeled carryover, the Ridge regression model with Adstock and Hill Saturation yields a Durbin-Watson statistic near $2.0$. This confirms zero residual memory or serial correlation leakage.
 3. **Diagnostic Visualizations Generated**:
    - `outputs/figures/model_actual_vs_predicted.png`: Monthly actual vs. predicted revenue timeline with holdout test shading and metrics callout.
    - `outputs/figures/model_residuals_diagnostic.png`: 3-panel residual analysis (time-series with $\pm 1.96\sigma$ bounds, residuals vs. fitted values, and error normality histogram).
 
+> **Update:** Media coefficients are now constrained to be non-negative, which fixed the negative Radio coefficient. See `reports/model_fix_non_negative_media.md` for the before/after comparison.
 ---
 
 ## 2. Architecture & Modules Delivered
