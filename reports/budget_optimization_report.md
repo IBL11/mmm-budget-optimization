@@ -87,6 +87,35 @@ Figure: `outputs/figures/opt_01_current_vs_optimal.png`
 
 Figure: `outputs/figures/opt_02_budget_scenarios.png`
 
+### 3.3 Sensitivity checks
+
+**Channel limits.** The optimisation was repeated with limits from ±10% to ±50% per channel (same budget).
+
+| Channel limit | Predicted sales (LKR M) | Uplift (LKR M) | Uplift |
+|---|---:|---:|---:|
+| ±10% | 1,051.7 | +10.3 | +1.0% |
+| ±20% | 1,060.3 | +18.8 | +1.8% |
+| **±30% (used)** | **1,067.4** | **+25.9** | **+2.5%** |
+| ±40% | 1,073.2 | +31.8 | +3.0% |
+| ±50% | 1,077.8 | +36.3 | +3.5% |
+
+At every limit, Google Search and YouTube are increased to the limit and Facebook/Instagram and Radio are reduced to the limit, so the direction does not depend on this assumption. Only the size of the uplift does.
+
+**Model uncertainty.** The model was re-fitted 100 times on resampled training months (moving-block bootstrap, as in notebook 05), and the budget was re-optimised with each model.
+
+| Channel | Final plan | Samples where increased | Samples where reduced |
+|---|---:|---:|---:|
+| Google Search | +30% | 93% | 6% |
+| YouTube | +30% | 86% | 13% |
+| TV | +6% | 57% | 41% |
+| Outdoor | −9% | 24% | 75% |
+| Facebook/Instagram | −30% | 29% | 69% |
+| Radio | −30% | 3% | 97% |
+
+The uplift was positive in every sample (90% range LKR 14.7M to 63.1M). The shift towards Google Search and YouTube and away from Radio is robust. The reduction of Facebook/Instagram and Outdoor holds in most samples, while the TV change is uncertain.
+
+Outputs: `outputs/tables/optimization_limit_sensitivity.csv`, `outputs/tables/optimization_model_sensitivity.csv`.
+
 ---
 
 ## 4. Key Findings
@@ -113,7 +142,7 @@ Figure: `outputs/figures/opt_02_budget_scenarios.png`
 - **Model-based results:** the uplift is a model prediction, not a guaranteed outcome.
 - **Small sample:** the model is trained on 36 months, so the response curves carry uncertainty. The bootstrap in notebook 05 shows that the gains from Google Search and YouTube are the most certain; the exact ROI of TV, Outdoor and Facebook/Instagram is less certain.
 - **Known external conditions:** 2025 is re-planned with its actual seasonality, promotions and economy. For 2026 planning, forecasts of these factors are needed.
-- **Bounds are a business assumption:** the ±30% limits should be checked against contracts, minimum brand presence and campaign capacity.
+- **Bounds are a business assumption:** the ±30% limits should be checked against contracts, minimum brand presence and campaign capacity. Section 3.3 shows that the direction of the recommendation does not change with the limits, only the size of the uplift.
 - **Revenue, not profit:** the optimiser maximises sales revenue. Margins were not available, so profit-based ROI was not calculated.
 
 ---
