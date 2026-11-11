@@ -1,15 +1,15 @@
 feature,standardized_coefficient,feature_type
-promotion_discount_pct,2659638.471147468,External factor
-seasonal_demand_index,2275468.7942064246,External factor
-google_search_spend_lkr_hill,1460642.216658611,Media
-tv_spend_lkr_hill,1104297.3034850701,Media
-youtube_spend_lkr_hill,1023261.6138846806,Media
-economic_sentiment_index_0_100,978554.4662604679,External factor
-competitor_pressure_index_0_100,-805037.6013445405,External factor
-radio_spend_lkr_hill,-792642.6548324489,Media
-outdoor_spend_lkr_hill,699827.1263605338,Media
-inflation_proxy_index,479313.0270003384,External factor
-average_price_index,454709.7484674875,External factor
-facebook_instagram_spend_lkr_hill,413409.22678279964,Media
-public_holiday_count,152281.77638820832,External factor
-lkr_usd_exchange_rate,-125671.97805339396,External factor
+promotion_discount_pct,2635542.8653777377,External factor
+seasonal_demand_index,2496336.0135579226,External factor
+google_search_spend_lkr_hill,1287091.5058765383,Media
+tv_spend_lkr_hill,992336.3217759351,Media
+economic_sentiment_index_0_100,921770.8957717232,External factor
+youtube_spend_lkr_hill,896714.0555363052,Media
+competitor_pressure_index_0_100,-869251.4557589489,External factor
+outdoor_spend_lkr_hill,599483.291127956,Media
+inflation_proxy_index,466380.14712779137,External factor
+average_price_index,453501.3888129137,External factor
+facebook_instagram_spend_lkr_hill,351815.04093702196,Media
+lkr_usd_exchange_rate,-220867.18150237115,External factor
+public_holiday_count,129852.72100077647,External factor
+radio_spend_lkr_hill,0.0,Media
