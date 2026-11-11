@@ -56,7 +56,7 @@ Figure: `outputs/figures/roi_01_sales_decomposition.png`
 | 2 | Google Search | 119.4 | 468.6 | 3.93 | 293% | 1.92 |
 | 3 | TV | 157.0 | 375.2 | 2.39 | 139% | 1.19 |
 | 4 | Outdoor | 94.1 | 191.7 | 2.04 | 104% | 1.00 |
-| 5 | Facebook/Instagram | 158.3 | 160.4 | 1.01 | 1% | 0.51 |
+| 5 | Facebook/Instagram | 158.3 | 160.4 | 1.01 | 1% | 0.50 |
 | 6 | Radio | 60.1 | 0.0 | 0.00 | – | 0.00 |
 
 Channels are ranked by marginal ROI, the return on the next rupee, which is the measure that should guide budget decisions.
@@ -115,7 +115,7 @@ Figure: `outputs/figures/roi_04_external_impact.png`
 
 - About half of sales (49.6%) would happen without advertising. Advertising drives the other half.
 - **YouTube and Google Search** give the highest return on additional spend (marginal ROI 2.13 and 1.92) and bring in more sales than their share of the budget.
-- **Facebook/Instagram** receives about 24% of the budget but causes only about 10% of advertising-driven sales. Its marginal ROI (0.51) is below 1.
+- **Facebook/Instagram** receives about 24% of the budget but causes only about 10% of advertising-driven sales. Its marginal ROI (0.50) is below 1.
 - **TV** is balanced, and **Outdoor** is at its break-even point.
 - The model finds **no measurable sales effect from Radio**.
 - **Promotions and seasonality** move sales more than any single media channel.
