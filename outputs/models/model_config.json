@@ -13,7 +13,6 @@
         "competitor_pressure_index_0_100",
         "economic_sentiment_index_0_100",
         "lkr_usd_exchange_rate",
-        "inflation_proxy_index",
         "seasonal_demand_index",
         "public_holiday_count"
     ],
@@ -31,7 +30,6 @@
         "competitor_pressure_index_0_100",
         "economic_sentiment_index_0_100",
         "lkr_usd_exchange_rate",
-        "inflation_proxy_index",
         "seasonal_demand_index",
         "public_holiday_count"
     ],

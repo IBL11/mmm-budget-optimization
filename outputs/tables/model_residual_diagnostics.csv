@@ -1,0 +1,5 @@
+test,value,good_if,passed
+Durbin-Watson,2.178894622103173,close to 2,True
+Ljung-Box (lag 3) p-value,0.21436477651577784,> 0.05,True
+Shapiro-Wilk p-value,0.6376708851367057,> 0.05,True
+Breusch-Pagan p-value,0.14608158503433005,> 0.05,True

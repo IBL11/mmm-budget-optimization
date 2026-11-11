@@ -42,7 +42,7 @@ Because of diminishing returns, the best split does not put all the money into o
 | Total spend equals budget | Yes (LKR 240,285,900) |
 | Every channel within 70%–130% | Yes |
 | The plan changes the split | Yes |
-| Comparison with 2,000 random plans that follow the same rules | Best random plan: LKR 1,062.3M · optimiser: LKR 1,069.2M, so the optimiser is better |
+| Comparison with 2,000 random plans that follow the same rules | Best random plan: LKR 1,060.3M · optimiser: LKR 1,067.4M, so the optimiser is better |
 
 ---
 
@@ -54,17 +54,17 @@ Because of diminishing returns, the best split does not put all the money into o
 |---|---:|---:|---:|---:|---:|---:|
 | Google Search | 43.2 | 56.2 | +13.0 | **+30%** (limit) | 18.0% | 23.4% |
 | YouTube | 30.6 | 39.8 | +9.2 | **+30%** (limit) | 12.8% | 16.6% |
-| TV | 56.5 | 59.7 | +3.2 | +6% | 23.5% | 24.9% |
-| Outdoor | 33.4 | 31.0 | −2.4 | −7% | 13.9% | 12.9% |
+| TV | 56.5 | 60.2 | +3.7 | +6% | 23.5% | 25.1% |
+| Outdoor | 33.4 | 30.5 | −2.9 | −9% | 13.9% | 12.7% |
 | Radio | 22.0 | 15.4 | −6.6 | **−30%** (limit) | 9.2% | 6.4% |
 | Facebook/Instagram | 54.5 | 38.1 | −16.3 | **−30%** (limit) | 22.7% | 15.9% |
 | **Total** | **240.3** | **240.3** | **0.0** | | 100% | 100% |
 
 | Predicted 2025 sales | LKR M |
 |---|---:|
-| Current split | 1,044.5 |
-| Optimal split | 1,069.2 |
-| **Expected uplift** | **+24.7 (+2.4%)** |
+| Current split | 1,041.5 |
+| Optimal split | 1,067.4 |
+| **Expected uplift** | **+25.9 (+2.5%)** |
 
 Four channels reach their ±30% limit, which means the optimiser would move further if the limits were wider.
 
@@ -74,15 +74,15 @@ Figure: `outputs/figures/opt_01_current_vs_optimal.png`
 
 | Budget change | Total budget (LKR M) | Sales, current split (LKR M) | Sales, optimal split (LKR M) | Gain from better split (LKR M) |
 |---|---:|---:|---:|---:|
-| −20% | 192.2 | 989.8 | 1,006.6 | +16.8 |
-| −10% | 216.3 | 1,018.6 | 1,042.0 | +23.4 |
-| **0%** | **240.3** | **1,044.5** | **1,069.2** | **+24.7** |
-| +10% | 264.3 | 1,067.8 | 1,089.9 | +22.1 |
-| +20% | 288.3 | 1,089.0 | 1,103.8 | +14.8 |
+| −20% | 192.2 | 986.3 | 1,003.7 | +17.4 |
+| −10% | 216.3 | 1,015.4 | 1,039.8 | +24.4 |
+| **0%** | **240.3** | **1,041.5** | **1,067.4** | **+25.9** |
+| +10% | 264.3 | 1,065.1 | 1,088.4 | +23.3 |
+| +20% | 288.3 | 1,086.4 | 1,101.6 | +15.2 |
 
 - At every budget level, the optimal split gives more sales than today's split.
-- With a **10% smaller budget**, the optimal split gives about the same sales as today's full budget with the current split (LKR 1,042.0M vs 1,044.5M), a saving of about **LKR 24M**.
-- A **10% larger budget** with the optimal split adds about **LKR 45.4M** compared with today.
+- With a **10% smaller budget**, the optimal split gives about the same sales as today's full budget with the current split (LKR 1,039.8M vs 1,041.5M), a saving of about **LKR 24M**.
+- A **10% larger budget** with the optimal split adds about **LKR 46.9M** compared with today.
 - The gain from a better split shrinks at higher budgets, because more channels start to saturate.
 
 Figure: `outputs/figures/opt_02_budget_scenarios.png`
@@ -91,7 +91,7 @@ Figure: `outputs/figures/opt_02_budget_scenarios.png`
 
 ## 4. Key Findings
 
-- Re-splitting the same LKR 240.3M budget is expected to raise 2025 sales by about **LKR 24.7M (+2.4%)**.
+- Re-splitting the same LKR 240.3M budget is expected to raise 2025 sales by about **LKR 25.9M (+2.5%)**.
 - Money should move **from Facebook/Instagram and Radio to Google Search and YouTube**, with a small increase for TV and a small decrease for Outdoor.
 - A better split is about as valuable as a 10% bigger budget with today's split.
 - If the budget is increased, the extra money should go first to Google Search and YouTube, then TV.
@@ -111,7 +111,7 @@ Figure: `outputs/figures/opt_02_budget_scenarios.png`
 ## 6. Limitations
 
 - **Model-based results:** the uplift is a model prediction, not a guaranteed outcome.
-- **Small sample:** the model is trained on 36 months, so the response curves carry uncertainty.
+- **Small sample:** the model is trained on 36 months, so the response curves carry uncertainty. The bootstrap in notebook 05 shows that the gains from Google Search and YouTube are the most certain; the exact ROI of TV, Outdoor and Facebook/Instagram is less certain.
 - **Known external conditions:** 2025 is re-planned with its actual seasonality, promotions and economy. For 2026 planning, forecasts of these factors are needed.
 - **Bounds are a business assumption:** the ±30% limits should be checked against contracts, minimum brand presence and campaign capacity.
 - **Revenue, not profit:** the optimiser maximises sales revenue. Margins were not available, so profit-based ROI was not calculated.
