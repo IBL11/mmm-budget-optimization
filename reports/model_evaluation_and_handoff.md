@@ -209,7 +209,7 @@ A simpler model using log(1 + spend), with no adstock or saturation curve, was f
 | Google Search | 1.92 | 2.32 | 2 | 1 |
 | TV | 1.19 | 0.55 | 3 | 4 |
 | Outdoor | 1.00 | 0.80 | 4 | 3 |
-| Facebook/Instagram | 0.51 | 0.00 | 5 | 5 |
+| Facebook/Instagram | 0.50 | 0.00 | 5 | 5 |
 | Radio | 0.00 | 0.00 | 6 | 5 |
 
 The final model is more accurate, and both models agree on the main message (rank correlation 0.87): Google Search and YouTube give the best return on extra spend, and Facebook/Instagram and Radio the lowest.
