@@ -35,7 +35,7 @@
         "seasonal_demand_index",
         "public_holiday_count"
     ],
-    "model_type": "Ridge Regression",
+    "model_type": "Ridge Regression (non-negative media coefficients)",
     "best_alpha": 10.0,
     "test_size_months": 6,
     "training_start": "2023-01-01",
@@ -43,5 +43,3 @@
     "test_start": "2025-07-01",
     "test_end": "2025-12-01"
 }
-
-
