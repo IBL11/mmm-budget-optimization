@@ -77,7 +77,7 @@ Missing values created by the lag and rolling features (first one or two months)
 
 | Used as model inputs | Not used as model inputs |
 |---|---|
-| The six channel spend columns (transformed with adstock and saturation in notebook 05) and the eight external factors | `total_ad_spend_lkr` (sum of the channels), `impressions`, `clicks`, `conversions`, and features calculated from sales such as `roas`, `revenue_per_unit` and `revenue_per_conversion` |
+| The six channel spend columns (transformed with adstock and saturation in notebook 05) and seven external factors (all except `inflation_proxy_index`, which was removed because it moves almost together with the price index) | `total_ad_spend_lkr` (sum of the channels), `impressions`, `clicks`, `conversions`, and features calculated from sales such as `roas`, `revenue_per_unit` and `revenue_per_conversion` |
 
 Features built from sales or from advertising outcomes would leak the target into the model, so they are used for EDA only. Delayed effects are handled in the model by adstock rather than by the lag features.
 
@@ -88,7 +88,7 @@ Features built from sales or from advertising outcomes would leak the target int
 - The dataset is complete: no missing values, no duplicates, and 36 consecutive months.
 - Total ad spend in the source had small rounding differences (at most LKR 2) and was recalculated from the six channels.
 - Very few values fell outside the IQR limits; the main ones are the December seasonal peaks and three sales months.
-- The final feature table has 44 columns. 14 of them (6 channels + 8 external factors) are inputs to the Marketing Mix Model.
+- The final feature table has 44 columns. 13 of them (6 channels + 7 external factors) are inputs to the Marketing Mix Model.
 
 ---
 
@@ -107,3 +107,4 @@ Features built from sales or from advertising outcomes would leak the target int
 - **Modelling (notebook 05)** reads the raw file through `config/params.json` and applies its own validation checks.
 - **ROI and optimisation (notebooks 06 and 07)** use `feature_engineered_marketing_mix_data.csv` as the input table for `MMMPredictor`.
 - Column definitions are listed in `config/data_schema.md` and in the `Data_Dictionary` sheet of the raw workbook.
+

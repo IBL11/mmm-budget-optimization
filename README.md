@@ -48,7 +48,7 @@ Marketing teams need to know which channels actually drive sales, how long their
 
 **Media channels:** TV · Facebook & Instagram · Google Search · YouTube · Radio · Outdoor
 
-**External factors:** price index · promotion discount · competitor pressure · economic sentiment · LKR/USD exchange rate · inflation proxy · seasonal demand · public holidays
+**External factors:** price index · promotion discount · competitor pressure · economic sentiment · LKR/USD exchange rate · seasonal demand · public holidays (the inflation proxy is in the data but not used in the model, because it moves almost together with the price index)
 
 Full column definitions are in [`config/data_schema.md`](config/data_schema.md).
 
